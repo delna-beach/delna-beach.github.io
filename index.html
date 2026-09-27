@@ -13,7 +13,7 @@
 <!-- Delňa Beach (2026-09-26, krok J): obal prenesený celý z obalu SMEČKY (smecka-presov.github.io, R27 @93, overený na iPhone);
      iné je len: adresa deploymentu Delne, logo, názvy a kľúč úložiska. Prehľad je čítací, BEZ tokenu. -->
 <link rel="manifest" href="manifest.json">
-<meta name="theme-color" id="tcol" content="#f2f2f7">
+<meta name="theme-color" id="tcol" content="#faf4e8">
 <meta name="mobile-web-app-capable" content="yes">
 <meta name="apple-mobile-web-app-capable" content="yes">
 <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
@@ -26,7 +26,7 @@
   /* FARBA A POSUN POD HODINY — prenesené celé z launchera SMEČKY (nasadenie 1, overené na iPhone iOS 26):
      iOS 26 ignoruje theme-color a farbu pruhu berie z pozadia stránky pri prvom vykreslení → okolie vo farbe appky.
      Prehľad nemá voľbu Vzhľad, ide podľa telefónu (prefers-color-scheme) — rovnako tu. */
-  var VZ_BG = { light: "#f2f2f7", dark: "#000000" };
+  var VZ_BG = { light: "#faf4e8", dark: "#000000" };   /* R36: svetlý = piesok Delne (--bg appky), tmavý bez zmeny */
   function vzApply() {
     var dark = !!(window.matchMedia && matchMedia("(prefers-color-scheme: dark)").matches);
     var r = document.documentElement; r.classList.toggle("vz-dark", dark); r.classList.toggle("vz-light", !dark);
@@ -53,7 +53,7 @@
 
 <style>
   *{box-sizing:border-box}
-  html.vz-light{--vzbg:#f2f2f7;--vzfoot:#6e6e73;--vzink:#1c1c1e;--vzcard:#fff;--vzfill:#e7e7ec;--vzacc:#1f6fd1}
+  html.vz-light{--vzbg:#faf4e8;--vzfoot:#56657a;--vzink:#012046;--vzcard:#fff;--vzfill:#f1e6d2;--vzacc:#00679b}   /* R36: tokeny svetlého režimu Delne (instance.json → theme.light) */
   html.vz-dark{--vzbg:#000;--vzfoot:#98989f;--vzink:#f2f2f7;--vzcard:#1c1c1e;--vzfill:#2c2c2e;--vzacc:#4c9bf5}
   /* ⚠️ `overflow:hidden` len na body, NIKDY na html (inak plocha pod domovskou čiarkou ostane biela — overené 2026-09-13).
      `min-height:100vh` = telo prerastie pod domovskú čiarku a vykreslí ju svojím pozadím. */

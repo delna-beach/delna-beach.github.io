@@ -14,7 +14,7 @@
 <meta name="apple-mobile-web-app-capable" content="yes">
 <meta name="mobile-web-app-capable" content="yes">
 <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
-<meta name="theme-color" id="tcol" content="#f2f2f7">
+<meta name="theme-color" id="tcol" content="#faf4e8">
 <!-- PWA manifest LEN mimo iOS (Android „Inštalovať aplikáciu", v2.60.122).
      2026-09-19: iOS ikona z plochy má vlastné úložisko (localStorage zo Safari nevidí) a s manifestom
      sa spúšťa na start_url bez tokenu → pýtala token. Bez manifestu iOS uloží do ikony aktuálnu
@@ -32,7 +32,7 @@
   /* NASADENIE 1 — okolie hodín vo farbe appky. iOS 26 ignoruje theme-color a farbu pruhu berie z pozadia stránky pri prvom
      vykreslení; black-translucent sa od 26.1 správa nestále → nestavať na tom, ako iOS pruh nakreslí, len na farbe.
      Voľbu Vzhľad posiela appka (postMessage), launcher si ju pamätá vo vlastnom úložisku (appka je v cudzom rámci). */
-  var VZ_KEY = "delna_vzhlad", VZ_TOPKEY = "delna_apptop", VZ_BG = { light: "#f2f2f7", dark: "#000000" };
+  var VZ_KEY = "delna_vzhlad", VZ_TOPKEY = "delna_apptop", VZ_BG = { light: "#faf4e8", dark: "#000000" };   /* R36: svetlý = piesok Delne (--bg appky), tmavý bez zmeny */
   function vzChoice() { try { var v = localStorage.getItem(VZ_KEY); return (v === "light" || v === "dark") ? v : "auto"; } catch (e) { return "auto"; } }
   function vzApply() {
     var c = vzChoice(), dark = c === "dark" || (c === "auto" && !!(window.matchMedia && matchMedia("(prefers-color-scheme: dark)").matches));
@@ -119,7 +119,7 @@
     color:#7e91a6;font-size:11px;font-weight:700;letter-spacing:2.5px}
   html.embed,body.embed{overflow:hidden}
   /* NASADENIE 1: farby okolia (svetlá/tmavá appka) */
-  html.vz-light { --vzbg: #f2f2f7; --vzfoot: #6e6e73; }
+  html.vz-light { --vzbg: #faf4e8; --vzfoot: #56657a; }   /* R36: piesok + mute Delne */
   html.vz-dark { --vzbg: #000; --vzfoot: #98989f; }
   html.embed, html.embed body { background: var(--vzbg); }
   #vzprobe { position: fixed; top: 0; left: 0; width: 1px; height: env(safe-area-inset-top); visibility: hidden; pointer-events: none; }
